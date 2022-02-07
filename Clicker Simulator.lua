@@ -9,14 +9,25 @@
 
 ]] --
 
+-- Load 
+repeat wait() until game:IsLoaded()
+
 -- Services
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local WS = game:GetService("Workspace")
+local VU = game:GetService("VirtualUser")
 
 -- Variables
 local Player = Players.LocalPlayer
 local Gamepass = Player.Data.gamepasses
+
+-- Anti AFK
+Player.Idled:connect(function()
+   VU:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   VU:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
 
 -- Client Settings
 local Client = {
