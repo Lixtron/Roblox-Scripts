@@ -5,5 +5,10 @@ else
     if game.PlaceId == 3851622790 or game.PlaceId == 4620170611 then
         loadstring(game:HttpGet(
             "https://raw.githubusercontent.com/TrustsenseDev/Roblox-Scripts/main/Premier%20Break%20%20In.lua"))()
+    else
+        if game.PlaceId == 662417684 then
+            loadstring(game:HttpGet(
+                "https://raw.githubusercontent.com/TrustsenseDev/Roblox-Scripts/main/Premier%20Lucky%20Blocks.lua"))()
+        end
     end
 end
